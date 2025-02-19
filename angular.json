@@ -22,8 +22,9 @@
             "tsConfig": "tsconfig.app.json",
             "assets": [
               {
-                "glob": "**/*",
-                "input": "public"
+               "glob": "**/*",
+                "input": "src/app/gender_icons",
+                "output": "gender_icons"
               }
             ],
             "styles": [
@@ -80,8 +81,9 @@
             "tsConfig": "tsconfig.spec.json",
             "assets": [
               {
-                "glob": "**/*",
-                "input": "public"
+               "glob": "**/*",
+                "input": "src/app/gender_icons",
+                "output": "gender_icons"
               }
             ],
             "styles": [

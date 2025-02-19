@@ -91,6 +91,39 @@
           }
         }
       }
+    },
+    "sysmoui-gender": {
+      "projectType": "library",
+      "root": "projects/sysmoui-gender",
+      "sourceRoot": "projects/sysmoui-gender/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "project": "projects/sysmoui-gender/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/sysmoui-gender/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "projects/sysmoui-gender/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "tsConfig": "projects/sysmoui-gender/tsconfig.spec.json",
+            "polyfills": [
+              "zone.js",
+              "zone.js/testing"
+            ]
+          }
+        }
+      }
     }
   }
 }

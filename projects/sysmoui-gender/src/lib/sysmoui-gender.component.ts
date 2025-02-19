@@ -15,17 +15,8 @@ import {
 import { IonicModule } from '@ionic/angular';
 import { SysmoGenderComponent } from './sysmo-gender.component';
 import { CapitalizeFirstLetterPipe } from '../extras/capitalize-first-letter.pipe';
-
-interface CustomStyleSheet {
-  color: string;
-  backgroundColor: string;
-  [key: string]: string;
-}
-interface Genders {
-  gender: string;
-  icon: string;
-  titles: string[];
-}
+import { CustomStyleSheet } from './stylesheet.model';
+import { Genders } from './gender.model';
 
 @Component({
   selector: 'sysmoui-gender',
@@ -52,8 +43,8 @@ export class SysmouiGenderComponent implements OnInit, ControlValueAccessor {
   @Input() selectStyleProps?: CustomStyleSheet;
   // Input for array of an user objects with gender, icon and titles
   @Input() users: Array<Genders> = [
-    { gender: 'Male', icon: '../assets/male_icon.png', titles: ['Mr'] },
-    { gender: 'Female', icon: '../assets/female_icon.png', titles: ['Ms'] },
+    { gender: 'Male', icon: '../gender_icons/male_icon.png', titles: ['Mr'] },
+    { gender: 'Female', icon: '../gender_icons/female_icon.png', titles: ['Ms'] },
     {
       gender: 'Others',
       icon: '',

@@ -2,20 +2,16 @@ import { CommonModule } from '@angular/common';
 import {
   ChangeDetectionStrategy,
   Component,
-  input,
   Input,
-  OnInit,
+  OnInit
 } from '@angular/core';
 import {
   IonAvatar,
   IonChip,
-  IonContent,
-  IonLabel,
+  IonLabel
 } from '@ionic/angular/standalone';
 import { Genders } from './gender.model';
 import { CustomStyleSheet } from './stylesheet.model';
-import { IconService } from '../shared/icon.service';
-
 @Component({
   selector: 'sysmo-gender',
   templateUrl: './sysmo-gender.component.html',
@@ -30,12 +26,12 @@ export class SysmoGenderComponent implements OnInit {
   // Input to custom styles for gender
   @Input() genderStyleProps?: CustomStyleSheet;
 
-  constructor(private iconService: IconService) {}
+  constructor() {}
 
   ngOnInit(): void {}
   // Method returns the icon based on gender
   getGenderIcon(icon: string): string {
-    return this.iconService.getIconUrl(icon);
+    return icon ? `${icon}` : '';
   }
 
   // Method returns the label based on gender
